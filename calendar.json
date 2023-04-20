@@ -1,0 +1,99 @@
+{
+  "week": [{
+      "dayOfWeek": "Mon",
+      "numberOfMonth": "11",
+      "id": "0"
+    },
+    {
+      "dayOfWeek": "Tue",
+      "numberOfMonth": "12",
+      "id": "1"
+    },
+    {
+      "dayOfWeek": "Wed",
+      "numberOfMonth": "13",
+      "id": "2"
+    },
+    {
+      "dayOfWeek": "Thu",
+      "numberOfMonth": "14",
+      "id": "3"
+    },
+    {
+      "dayOfWeek": "Fri",
+      "numberOfMonth": "15",
+      "id": "4"
+    },
+    {
+      "dayOfWeek": "Sat",
+      "numberOfMonth": "16",
+      "id": "5"
+    },
+    {
+      "dayOfWeek": "Sun",
+      "numberOfMonth": "17",
+      "id": "6"
+    }
+  ],
+  "months": [{
+      "id": 0,
+      "month": "January",
+      "year": 2023
+    },
+    {
+      "id": 1,
+      "month": "February",
+      "year": 2023
+    },
+    {
+      "id": 2,
+      "month": "March",
+      "year": 2023
+    },
+    {
+      "id": 3,
+      "month": "April",
+      "year": 2023
+    },
+    {
+      "id": 4,
+      "month": "May",
+      "year": 2023
+    },
+    {
+      "id": 5,
+      "month": "June",
+      "year": 2023
+    },
+    {
+      "id": 6,
+      "month": "July",
+      "year": 2023
+    },
+    {
+      "id": 7,
+      "month": "August",
+      "year": 2023
+    },
+    {
+      "id": 8,
+      "month": "September",
+      "year": 2023
+    },
+    {
+      "id": 9,
+      "month": "October",
+      "year": 2023
+    },
+    {
+      "id": 10,
+      "month": "November",
+      "year": 2023
+    },
+    {
+      "id": 11,
+      "month": "December",
+      "year": 2023
+    }
+  ]
+}
