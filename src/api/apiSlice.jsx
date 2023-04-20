@@ -10,7 +10,7 @@ export const apiSlice = createApi({
             providesTags: ['Calendar']
         }),
         getMonth: builder.query({
-            query: id => `/month/${id}`,
+            query: id => `/months/${id}`,
             providesTags: ['Calendar']
         }),
         // createHero: builder.mutation({

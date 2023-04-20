@@ -4,26 +4,31 @@ import styled from "styled-components";
 import { useGetWeekdaysQuery, useGetMonthQuery } from '../../api/apiSlice.jsx';
 import Spinner from '../spinner/Spinner';
 import WeekdaysItem from "../weekdaysItem/WeekdaysItem.jsx";
+import MonthItem from "../monthItem/MonthItem.jsx";
 
 const Weekdays = () => {
+  const WeekdaysContainer = styled.div`
+       background-color: #f7f6f6;
+  `;
+
   const LoadingError = styled.h5`
     color: red;
-  `
+  `;
   const ListOfDate = styled.ul`
     display: flex;
     justify-content: space-around;
     align-items: center;
-  `
+  `;
 
   const {
       data: daysOfWeek = [],
       isLoading,
       isError,
-  } = useGetWeekdaysQuery(10);
+  } = useGetWeekdaysQuery();
 
   const {
     data: month = ''
-  } = useGetMonthQuery();
+  } = useGetMonthQuery(10);
 
   if (isLoading) {
     return <Spinner/>;
@@ -39,15 +44,18 @@ const Weekdays = () => {
     return arr.map(({id, ...props}) => {
         return <WeekdaysItem key={id} {...props}/>
     })
-}
+  }
 
-const elementsOfWeek = renderDateList(daysOfWeek.slice());
+console.log(month)
+
+  const elementsOfWeek = renderDateList(daysOfWeek.slice());
   return (
-    <>
+    <WeekdaysContainer>
       <ListOfDate>
         {elementsOfWeek}
       </ListOfDate>
-    </>
+      <MonthItem monthAndYear={month}/>
+    </WeekdaysContainer>
   );
 };
 

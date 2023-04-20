@@ -1,11 +1,28 @@
 import React from "react";
+import styled from "styled-components";
 
 const WeekdaysItem = ({dayOfWeek, numberOfMonth}) => {
+  const WeekdaysItemContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  `
+  const DayOfWeek = styled.div`
+    font-weight: 600;
+    font-size: 14px;
+  `
+
+  const NumberOfMonth = styled.div`
+    font-weight: 600;
+    font-size: 24px;
+  `
+
   return (
-    <div className="weekdays-item_container">
-      <div className="day-of-week">{dayOfWeek}</div>
-      <div className="calendar-number">{numberOfMonth}</div>
-    </div>
+    <WeekdaysItemContainer>
+      <DayOfWeek>{dayOfWeek}</DayOfWeek>
+      <NumberOfMonth>{numberOfMonth}</NumberOfMonth>
+    </WeekdaysItemContainer>
   );
 };
 

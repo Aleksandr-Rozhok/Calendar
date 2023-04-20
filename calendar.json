@@ -1,36 +1,36 @@
 {
   "week": [{
-      "dayOfWeek": "Mon",
+      "dayOfWeek": "M",
       "numberOfMonth": "11",
       "id": "0"
     },
     {
-      "dayOfWeek": "Tue",
+      "dayOfWeek": "T",
       "numberOfMonth": "12",
       "id": "1"
     },
     {
-      "dayOfWeek": "Wed",
+      "dayOfWeek": "W",
       "numberOfMonth": "13",
       "id": "2"
     },
     {
-      "dayOfWeek": "Thu",
+      "dayOfWeek": "T",
       "numberOfMonth": "14",
       "id": "3"
     },
     {
-      "dayOfWeek": "Fri",
+      "dayOfWeek": "F",
       "numberOfMonth": "15",
       "id": "4"
     },
     {
-      "dayOfWeek": "Sat",
+      "dayOfWeek": "S",
       "numberOfMonth": "16",
       "id": "5"
     },
     {
-      "dayOfWeek": "Sun",
+      "dayOfWeek": "S",
       "numberOfMonth": "17",
       "id": "6"
     }
