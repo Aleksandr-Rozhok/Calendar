@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useState } from 'react';
 
 import { useGetWeekdaysQuery, useGetMonthQuery } from '../../api/apiSlice.jsx';
 import Spinner from '../spinner/Spinner';
@@ -26,6 +27,8 @@ const Weekdays = () => {
     padding: 0 5%;
   `;
 
+const [activeIndex, setActiveIndex] = useState("0");
+
   const {
       data: daysOfWeek = [],
       isLoading,
@@ -42,13 +45,22 @@ const Weekdays = () => {
     return <LoadingError>Ошибка загрузки</LoadingError>
   }
 
+  const handleActiveElem = (index) => {
+    setActiveIndex(index);
+  };
+
   const renderDateList = (arr) => {
     if (arr.length === 0) {
         return <h5 className="text-center mt-5">Данных пока нет</h5>
     }
 
     return arr.map(({id, ...props}) => {
-        return <WeekdaysItem key={id} {...props}/>
+        return <WeekdaysItem 
+          key={id}
+          id={id}
+          isActive={activeIndex === id}
+          handleActiveElem={() => handleActiveElem(id)}
+          {...props}/>
     })
   }
 
