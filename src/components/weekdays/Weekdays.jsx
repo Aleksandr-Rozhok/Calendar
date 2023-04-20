@@ -7,11 +7,11 @@ import MonthItem from "../monthItem/MonthItem.jsx";
 
 const Weekdays = () => {
   const WeekdaysContainer = styled.div`
-    padding-left: 7%;
+    padding-left: 10%;
     background-color: #f7f6f6;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     border-top: 1px solid #cdcdcd;
     border-bottom: 1px solid #cdcdcd;
   `;
@@ -21,8 +21,9 @@ const Weekdays = () => {
   `;
   const ListOfDate = styled.ul`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
   `;
 
   const {

@@ -13,8 +13,23 @@ const WeekdaysItem = ({dayOfWeek, numberOfMonth}) => {
   `
 
   const NumberOfMonth = styled.div`
+    &:hover {
+      background-color: #cfc7c7
+    };
+    &:active {
+      background-color: red
+    };
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     font-size: 24px;
+    border-radius: 100%;
+    transition: background-color 0.5s;
+
+    cursor: pointer
   `
 
   return (

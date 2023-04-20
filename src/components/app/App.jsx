@@ -8,12 +8,12 @@ import Sheet from "../calendarSheet/CalendarSheet.jsx";
 
 const App = () => {
   const AppWrapper = styled.div`
-    width: 740px;
-    height: 100%;
+    max-width: 740px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0 50px;
+    margin: auto;
   `
   return (
     <AppWrapper>

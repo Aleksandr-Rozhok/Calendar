@@ -6,16 +6,18 @@ import { useGetHoursPointersQuery } from '../../api/apiSlice.jsx';
 
 const Sheet = () => {
     const SheetContainer = styled.div`
-        height: 80%;
         display: flex;
         flex-direction: row;
+        overflow-y: auto;
     `
     const TimeSection = styled.div`
-        width: 20%;
+        width: 10%;
+        height: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-end;
         flex-direction: column;
+        padding-right: 15px;
     `
     const CellsSection = styled.div`
         width: 100%;
@@ -39,6 +41,21 @@ const Sheet = () => {
                 {elementsOfWeek}
             </TimeSection>
             <CellsSection>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
+                <Row/>
                 <Row/>
                 <Row/>
                 <Row/>

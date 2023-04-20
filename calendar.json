@@ -97,10 +97,6 @@
     }
   ],
   "hoursPointers": [{
-      "pointer": "00:00",
-      "id": 110
-    },
-    {
       "pointer": "01:00",
       "id": 111
     },
