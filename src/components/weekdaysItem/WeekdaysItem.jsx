@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 
 const WeekdaysItem = ({dayOfWeek, numberOfMonth}) => {
   const WeekdaysItemContainer = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
   `

@@ -1,10 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 const MonthItem = ({monthAndYear}) => {
   const MonthItemContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    margin: 0 5% 0 10%;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
   `

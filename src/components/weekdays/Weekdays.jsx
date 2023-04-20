@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import { useGetWeekdaysQuery, useGetMonthQuery } from '../../api/apiSlice.jsx';
@@ -8,7 +7,13 @@ import MonthItem from "../monthItem/MonthItem.jsx";
 
 const Weekdays = () => {
   const WeekdaysContainer = styled.div`
-       background-color: #f7f6f6;
+    padding-left: 7%;
+    background-color: #f7f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
   `;
 
   const LoadingError = styled.h5`
@@ -38,15 +43,13 @@ const Weekdays = () => {
 
   const renderDateList = (arr) => {
     if (arr.length === 0) {
-        return <h5 className="text-center mt-5">Героев пока нет</h5>
+        return <h5 className="text-center mt-5">Данных пока нет</h5>
     }
 
     return arr.map(({id, ...props}) => {
         return <WeekdaysItem key={id} {...props}/>
     })
   }
-
-console.log(month)
 
   const elementsOfWeek = renderDateList(daysOfWeek.slice());
   return (

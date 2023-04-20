@@ -13,6 +13,10 @@ export const apiSlice = createApi({
             query: id => `/months/${id}`,
             providesTags: ['Calendar']
         }),
+        getHoursPointers: builder.query({
+            query: () => '/hoursPointers',
+            providesTags: ['Calendar']
+        }),
         // createHero: builder.mutation({
         //     query: hero => ({
         //         url: '/heroes',
@@ -31,4 +35,4 @@ export const apiSlice = createApi({
     })
 });
 
-export const {useGetWeekdaysQuery, useGetMonthQuery} = apiSlice;
+export const {useGetWeekdaysQuery, useGetMonthQuery, useGetHoursPointersQuery} = apiSlice;

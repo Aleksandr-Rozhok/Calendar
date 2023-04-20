@@ -1,5 +1,3 @@
-import React from "react";
-
 import styled from "styled-components";
 
 const CalendarHeader = () => {
@@ -7,6 +5,7 @@ const CalendarHeader = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 25px;
   `;
   const CalendarTitle = styled.h1`
     font-weight: 400;
