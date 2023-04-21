@@ -15,6 +15,7 @@ const App = () => {
     flex-direction: column;
     margin: auto;
   `
+  
   return (
     <AppWrapper>
       <CalendarHeader />

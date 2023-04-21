@@ -23,10 +23,6 @@ const Sheet = () => {
         width: 100%;
     `
 
-    // const {
-    //     data: hoursPointers = [],
-    // } = useGetHoursPointersQuery();
-
     const createHoursPointer = () => {
         const hoursPointers = [];
 
@@ -47,6 +43,16 @@ const Sheet = () => {
         })
     }
 
+    const renderRows = () => {
+        const allRows = [];
+
+        for (let i = 0; i < 24; i++) {
+            allRows.push(<Row numberOfRow={i} key={uuidv4()} />)
+        }
+
+        return allRows;
+    }
+
   const elementsOfWeek = renderHoursPointersList(createHoursPointer());
 
     return (
@@ -55,30 +61,7 @@ const Sheet = () => {
                 {elementsOfWeek}
             </TimeSection>
             <CellsSection>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
-                <Row/>
+                {renderRows()}
             </CellsSection>
         </SheetContainer>
     )

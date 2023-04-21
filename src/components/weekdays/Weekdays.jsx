@@ -16,9 +16,6 @@ const Weekdays = () => {
     border-bottom: 1px solid #cdcdcd;
   `;
 
-  const LoadingError = styled.h5`
-    color: red;
-  `;
   const ListOfDate = styled.ul`
     display: flex;
     justify-content: space-between;
@@ -35,7 +32,6 @@ const Weekdays = () => {
   const currDayOfWeek = today.getDay();
 
   useEffect(() => {
-
     handleActiveElem(date)
     // eslint-disable-next-line
   }, []);
@@ -58,18 +54,19 @@ const Weekdays = () => {
 
     return arrOfDates.map((day, i) => {
 
-        return <WeekdaysItem 
-          key={uuidv4()}
-          id={uuidv4()}
-          day={day}
-          dayOfWeek={weekdays[i]}
-          isActive={activeIndex === day}
-          handleActiveElem={() => handleActiveElem(date)}
-          />
+      return <WeekdaysItem 
+        key={uuidv4()}
+        id={uuidv4()}
+        day={day}
+        dayOfWeek={weekdays[i]}
+        isActive={activeIndex === day}
+        handleActiveElem={() => handleActiveElem(date)}
+        />
     })
   }
 
   const elementsOfWeek = renderDateList(currDayOfWeek);
+
   return (
     <WeekdaysContainer>
       <ListOfDate>

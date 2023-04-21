@@ -5,18 +5,10 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3001'}),
     tagTypes: ['Calendar'],
     endpoints: builder => ({
-        // getWeekdays: builder.query({
-        //     query: () => '/week',
-        //     providesTags: ['Calendar']
-        // }),
-        // getMonth: builder.query({
-        //     query: id => `/months/${id}`,
-        //     providesTags: ['Calendar']
-        // }),
-        // getHoursPointers: builder.query({
-        //     query: () => '/hoursPointers',
-        //     providesTags: ['Calendar']
-        // }),
+        getEvents: builder.query({
+            query: () => '/events',
+            providesTags: ['Calendar']
+        }),
         createEvent: builder.mutation({
             query: event => ({
                 url: '/events',
@@ -25,14 +17,14 @@ export const apiSlice = createApi({
             }),
             invalidatesTags: ['Calendar']
         }),
-        // deleteHero: builder.mutation({
-        //     query: id => ({
-        //         url: `/heroes/${id}`,
-        //         method: 'DELETE'
-        //     }),
-        //     invalidatesTags: ['Heroes']
-        // })
+        deleteEvents: builder.mutation({
+            query: id => ({
+                url: `/events/${id}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: ['Calendar']
+        })
     })
 });
 
-export const {useCreateEventMutation} = apiSlice;
+export const {useGetEventsQuery, useCreateEventMutation, useDeleteEventsMutation} = apiSlice;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { v4 as uuidv4 } from 'uuid';
 
 import { useCreateEventMutation } from '../../api/apiSlice.jsx';
 
@@ -24,11 +25,16 @@ const CalendarHeader = () => {
 
   const [createEvent] = useCreateEventMutation();
 
-
   const addEvent = () => {
-    const newEvent = prompt("Enter event time: YYYY-MM-DD HH:mm:ss");
-    console.log(typeof newEvent)
-    createEvent({"time": newEvent});
+    const newEvent = new Date(prompt("Enter event time: YYYY-MM-DD HH:mm:ss"));
+    const eventTime = newEvent.getHours();
+    const eventDate = newEvent.getDay();
+
+    createEvent({
+      "time": eventTime,
+      "day": eventDate,
+      "id": uuidv4()
+    });
   }
 
   return (

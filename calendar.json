@@ -1,20 +1,64 @@
 {
-  "events": [{
-      "id": 1
+  "events": [
+    {
+      "time": 3,
+      "day": 6,
+      "id": "fc4eeb85-3cb6-4cc9-ad26-5356f970cf5f"
     },
     {
-      "id": 2
+      "time": 3,
+      "day": 5,
+      "id": "e6899c51-da2d-4cd5-b77f-7c92c778ba07"
     },
     {
-      "id": 3
+      "time": 5,
+      "day": 6,
+      "id": "86b414ec-26ae-4442-adbb-fc781d824ab8"
     },
     {
-      "time": "1996-11-11 11:00:00",
-      "id": 4
+      "time": 1,
+      "day": 1,
+      "id": "ffb4027c-128c-462f-b46f-93660bb62f79"
     },
     {
-      "time": null,
-      "id": 5
+      "time": 8,
+      "day": 2,
+      "id": "6d3497ad-857f-4d18-9099-50391475a56c"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "172befa2-4b66-49cd-84ba-b02f79c1c3e5"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "f259b5df-d196-43c6-8549-e863bd8d51dc"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "93381e0f-406f-40df-89da-fddd83ea7443"
+    },
+    {
+      "time": 6,
+      "day": 3,
+      "id": "d38cb372-c78d-46a8-9441-79fab443d22a"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "5a75452f-9b98-4e01-b8ba-38cdf9e8ff7a"
+    },
+    {
+      "time": 5,
+      "day": 1,
+      "id": "88fb340c-1081-4999-8af7-a936010d2a13"
+    },
+    {
+      "time": 2,
+      "day": 4,
+      "id": "b409995e-408f-416e-99ce-a75fb751400a"
     }
   ]
 }
