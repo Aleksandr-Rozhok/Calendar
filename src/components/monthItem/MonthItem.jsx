@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MonthItem = ({monthAndYear}) => {
+const MonthItem = ({month, year}) => {
   const MonthItemContainer = styled.div`
     display: flex;
     margin: 0 5% 0 10%;
@@ -20,11 +20,12 @@ const MonthItem = ({monthAndYear}) => {
     background-color: transparent;
     cursor: pointer;
   `
+  const allMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   return (
     <MonthItemContainer>
       <ArrowButton>&lt;</ArrowButton>
-      <CurrentMonthAndYear>{monthAndYear.month} {monthAndYear.year}</CurrentMonthAndYear>
+      <CurrentMonthAndYear>{allMonth[month]} {year}</CurrentMonthAndYear>
       <ArrowButton>&gt;</ArrowButton>
     </MonthItemContainer>
   );

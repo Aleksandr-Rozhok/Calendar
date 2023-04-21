@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { v4 as uuidv4 } from 'uuid';
 
 import Row from "../square/Square";
 import HoursPointer from "../hoursPointer/HoursPointer";
-import { useGetHoursPointersQuery } from '../../api/apiSlice.jsx';
 
 const Sheet = () => {
     const SheetContainer = styled.div`
@@ -23,17 +23,31 @@ const Sheet = () => {
         width: 100%;
     `
 
-    const {
-        data: hoursPointers = [],
-    } = useGetHoursPointersQuery();
+    // const {
+    //     data: hoursPointers = [],
+    // } = useGetHoursPointersQuery();
+
+    const createHoursPointer = () => {
+        const hoursPointers = [];
+
+        for (let i = 1; i < 24; i++) {
+            if (i.toString().length === 1) {
+                hoursPointers.push(`0${i}:00`);
+            } else {
+                hoursPointers.push(`${i}:00`);
+            }
+        }
+
+        return hoursPointers;
+    }
 
     const renderHoursPointersList = (arr) => {
-        return arr.map(({id, ...props}) => {
-            return <HoursPointer key={id} {...props}/>
+        return arr.map(pointer => {
+            return <HoursPointer key={uuidv4()} pointer={pointer}/>
         })
     }
 
-  const elementsOfWeek = renderHoursPointersList(hoursPointers.slice());
+  const elementsOfWeek = renderHoursPointersList(createHoursPointer());
 
     return (
         <SheetContainer>

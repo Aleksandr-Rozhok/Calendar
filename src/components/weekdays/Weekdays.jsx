@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-import { useGetWeekdaysQuery, useGetMonthQuery } from '../../api/apiSlice.jsx';
-import Spinner from '../spinner/Spinner';
 import WeekdaysItem from "../weekdaysItem/WeekdaysItem.jsx";
 import MonthItem from "../monthItem/MonthItem.jsx";
 
@@ -27,50 +26,56 @@ const Weekdays = () => {
     padding: 0 5%;
   `;
 
-const [activeIndex, setActiveIndex] = useState("0");
+  const [activeIndex, setActiveIndex] = useState("0");
+  const weekdays = ["M", "T", "W", "T", "F", "S", "S"];
+  const today = new Date();
+  const date = today.getDate();
+  const month = today.getMonth(); 
+  const year = today.getFullYear();
+  const currDayOfWeek = today.getDay();
 
-  const {
-      data: daysOfWeek = [],
-      isLoading,
-      isError,
-  } = useGetWeekdaysQuery();
+  useEffect(() => {
 
-  const {
-    data: month = ''
-  } = useGetMonthQuery(10);
+    handleActiveElem(date)
+    // eslint-disable-next-line
+  }, []);
 
-  if (isLoading) {
-    return <Spinner/>;
-  } else if (isError) {
-    return <LoadingError>Ошибка загрузки</LoadingError>
-  }
 
   const handleActiveElem = (index) => {
     setActiveIndex(index);
   };
 
-  const renderDateList = (arr) => {
-    if (arr.length === 0) {
-        return <h5 className="text-center mt-5">Данных пока нет</h5>
+  const renderDateList = (currDayOfWeek) => {
+    const arrOfDates = [];
+
+    if (currDayOfWeek !== 1) {
+      const startOfWeek = date - (currDayOfWeek - 1);
+
+      for (let i = startOfWeek; i < startOfWeek + 7; i++) {
+        arrOfDates.push(i);
+      }
     }
 
-    return arr.map(({id, ...props}) => {
+    return arrOfDates.map((day, i) => {
+
         return <WeekdaysItem 
-          key={id}
-          id={id}
-          isActive={activeIndex === id}
-          handleActiveElem={() => handleActiveElem(id)}
-          {...props}/>
+          key={uuidv4()}
+          id={uuidv4()}
+          day={day}
+          dayOfWeek={weekdays[i]}
+          isActive={activeIndex === day}
+          handleActiveElem={() => handleActiveElem(date)}
+          />
     })
   }
 
-  const elementsOfWeek = renderDateList(daysOfWeek.slice());
+  const elementsOfWeek = renderDateList(currDayOfWeek);
   return (
     <WeekdaysContainer>
       <ListOfDate>
         {elementsOfWeek}
       </ListOfDate>
-      <MonthItem monthAndYear={month}/>
+      <MonthItem month={month} year={year}/>
     </WeekdaysContainer>
   );
 };

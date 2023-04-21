@@ -1,192 +1,20 @@
 {
-  "week": [{
-      "dayOfWeek": "M",
-      "numberOfMonth": "11",
-      "id": "0"
+  "events": [{
+      "id": 1
     },
     {
-      "dayOfWeek": "T",
-      "numberOfMonth": "12",
-      "id": "1"
+      "id": 2
     },
     {
-      "dayOfWeek": "W",
-      "numberOfMonth": "13",
-      "id": "2"
+      "id": 3
     },
     {
-      "dayOfWeek": "T",
-      "numberOfMonth": "14",
-      "id": "3"
+      "time": "1996-11-11 11:00:00",
+      "id": 4
     },
     {
-      "dayOfWeek": "F",
-      "numberOfMonth": "15",
-      "id": "4"
-    },
-    {
-      "dayOfWeek": "S",
-      "numberOfMonth": "16",
-      "id": "5"
-    },
-    {
-      "dayOfWeek": "S",
-      "numberOfMonth": "17",
-      "id": "6"
-    }
-  ],
-  "months": [{
-      "id": 0,
-      "month": "January",
-      "year": 2023
-    },
-    {
-      "id": 1,
-      "month": "February",
-      "year": 2023
-    },
-    {
-      "id": 2,
-      "month": "March",
-      "year": 2023
-    },
-    {
-      "id": 3,
-      "month": "April",
-      "year": 2023
-    },
-    {
-      "id": 4,
-      "month": "May",
-      "year": 2023
-    },
-    {
-      "id": 5,
-      "month": "June",
-      "year": 2023
-    },
-    {
-      "id": 6,
-      "month": "July",
-      "year": 2023
-    },
-    {
-      "id": 7,
-      "month": "August",
-      "year": 2023
-    },
-    {
-      "id": 8,
-      "month": "September",
-      "year": 2023
-    },
-    {
-      "id": 9,
-      "month": "October",
-      "year": 2023
-    },
-    {
-      "id": 10,
-      "month": "November",
-      "year": 2023
-    },
-    {
-      "id": 11,
-      "month": "December",
-      "year": 2023
-    }
-  ],
-  "hoursPointers": [{
-      "pointer": "01:00",
-      "id": 111
-    },
-    {
-      "pointer": "02:00",
-      "id": 112
-    },
-    {
-      "pointer": "03:00",
-      "id": 113
-    },
-    {
-      "pointer": "04:00",
-      "id": 114
-    },
-    {
-      "pointer": "05:00",
-      "id": 115
-    },
-    {
-      "pointer": "06:00",
-      "id": 116
-    },
-    {
-      "pointer": "07:00",
-      "id": 117
-    },
-    {
-      "pointer": "08:00",
-      "id": 118
-    },
-    {
-      "pointer": "09:00",
-      "id": 119
-    },
-    {
-      "pointer": "10:00",
-      "id": 120
-    },
-    {
-      "pointer": "11:00",
-      "id": 121
-    },
-    {
-      "pointer": "12:00",
-      "id": 122
-    },
-    {
-      "pointer": "13:00",
-      "id": 123
-    },
-    {
-      "pointer": "14:00",
-      "id": 124
-    },
-    {
-      "pointer": "15:00",
-      "id": 125
-    },
-    {
-      "pointer": "16:00",
-      "id": 126
-    },
-    {
-      "pointer": "17:00",
-      "id": 127
-    },
-    {
-      "pointer": "18:00",
-      "id": 128
-    },
-    {
-      "pointer": "19:00",
-      "id": 129
-    },
-    {
-      "pointer": "20:00",
-      "id": 130
-    },
-    {
-      "pointer": "21:00",
-      "id": 131
-    },
-    {
-      "pointer": "22:00",
-      "id": 132
-    },
-    {
-      "pointer": "23:00",
-      "id": 133
+      "time": null,
+      "id": 5
     }
   ]
 }

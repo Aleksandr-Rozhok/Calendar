@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WeekdaysItem = ({dayOfWeek, numberOfMonth, handleActiveElem, isActive}) => {
+const WeekdaysItem = ({dayOfWeek, day, handleActiveElem, isActive}) => {
   const WeekdaysItemContainer = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -33,7 +33,7 @@ const WeekdaysItem = ({dayOfWeek, numberOfMonth, handleActiveElem, isActive}) =>
   return (
     <WeekdaysItemContainer>
       <DayOfWeek>{dayOfWeek}</DayOfWeek>
-      <NumberOfMonth onClick={handleActiveElem}>{numberOfMonth}</NumberOfMonth>
+      <NumberOfMonth onClick={handleActiveElem}>{day}</NumberOfMonth>
     </WeekdaysItemContainer>
   )
 };
