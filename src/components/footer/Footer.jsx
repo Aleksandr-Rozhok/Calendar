@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { useSelector, useDispatch } from 'react-redux';
 
-const CalendarFooter = () => {
+import {useDeleteEventMutation} from "../../api/apiSlice";
+import { toggleVisibleBtn } from "../../actions/index";
+
+const CalendarFooter = (id) => {
   const Footer = styled.header`
     display: flex;
     align-items: center;
@@ -24,10 +28,23 @@ const CalendarFooter = () => {
     cursor: pointer;
   `;
 
+const [deleteEvents] = useDeleteEventMutation();
+const {visible, deleteId} = useSelector(state => state.deleteBtn);
+const dispatch = useDispatch();
+
+const deleteEvent = (id) => {
+  const confirm = window.confirm("Do you really want to delete this event?")
+
+  if (confirm) {
+    deleteEvents(id);
+    dispatch(toggleVisibleBtn(true));
+  }
+}
+
   return (
     <Footer>
       <CurrentDate>Today</CurrentDate>
-      <DeleteBtn >Delete</DeleteBtn>
+      <DeleteBtn hidden={visible} onClick={() => deleteEvent(deleteId)} >Delete</DeleteBtn>
     </Footer>
   );
 };

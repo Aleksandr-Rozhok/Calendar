@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
 
-import {useGetEventsQuery, useDeleteEventsMutation, useCreateEventMutation} from "../../api/apiSlice";
+import {useGetEventsQuery, useCreateEventMutation} from "../../api/apiSlice";
+import {toggleVisibleBtn , getDeleteId} from "../../actions/index";
 
 const Row = ({numberOfRow}) => {
     const SquareContainer = styled.div`
@@ -25,16 +27,25 @@ const Row = ({numberOfRow}) => {
     `
 
     const {data: events = []} = useGetEventsQuery();
-    const [deleteEvents] = useDeleteEventsMutation();
     const [createEvent] = useCreateEventMutation();
+    //const {deleteId} = useSelector(state => state.deleteBtn);
+    const dispatch = useDispatch();
 
-    const deleteEvent = (item) => {
-        item.style.border = "3px solid red"; 
 
-        deleteEvent();
+    const deleteEvent = (item, id) => {
+        console.log(id)
+        // dispatch(toggleCellColor(false));
+        // dispatch(toggleCellColor(true));
+
+        // if (color) {
+        //     item.style.backgroundColor = "red";
+        // }
+        dispatch(getDeleteId(id));
+        dispatch(toggleVisibleBtn(false));
     }
 
     const addEvent = (time, day, id) => {
+        dispatch(toggleVisibleBtn(true));
         const confirm = window.confirm(`Want to add an event at ${time}?`)
         
         if (confirm) {
@@ -79,10 +90,10 @@ const Row = ({numberOfRow}) => {
                 if (currDay[i]) {
                     result.push(<Square
                          style={{backgroundColor: "rgba(183, 224, 245, 0.78)"}}
-                         onClick={(e) => deleteEvent(e.target)}
+                         onClick={(e) => deleteEvent(e.target, currDay[i])}
                          time={time}
-                         id={currDay[i].id}
-                         key={currDay[i].id}
+                         id={currDay[i]}
+                         key={currDay[i]}
                          day={i} />)
                 } else {
                     result.push(<Square 

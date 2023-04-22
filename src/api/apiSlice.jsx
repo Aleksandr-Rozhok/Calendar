@@ -17,7 +17,7 @@ export const apiSlice = createApi({
             }),
             invalidatesTags: ['Calendar']
         }),
-        deleteEvents: builder.mutation({
+        deleteEvent: builder.mutation({
             query: id => ({
                 url: `/events/${id}`,
                 method: 'DELETE'
@@ -27,4 +27,4 @@ export const apiSlice = createApi({
     })
 });
 
-export const {useGetEventsQuery, useCreateEventMutation, useDeleteEventsMutation} = apiSlice;
+export const {useGetEventsQuery, useCreateEventMutation, useDeleteEventMutation} = apiSlice;
