@@ -2,103 +2,53 @@
   "events": [
     {
       "time": 3,
-      "day": 6,
-      "id": "fc4eeb85-3cb6-4cc9-ad26-5356f970cf5f"
-    },
-    {
-      "time": 3,
-      "day": 5,
-      "id": "e6899c51-da2d-4cd5-b77f-7c92c778ba07"
-    },
-    {
-      "time": 1,
-      "day": 1,
-      "id": "ffb4027c-128c-462f-b46f-93660bb62f79"
-    },
-    {
-      "time": 8,
-      "day": 2,
-      "id": "6d3497ad-857f-4d18-9099-50391475a56c"
-    },
-    {
-      "time": 3,
-      "day": 4,
-      "id": "172befa2-4b66-49cd-84ba-b02f79c1c3e5"
-    },
-    {
-      "time": 3,
-      "day": 4,
-      "id": "f259b5df-d196-43c6-8549-e863bd8d51dc"
-    },
-    {
-      "time": 3,
-      "day": 4,
-      "id": "93381e0f-406f-40df-89da-fddd83ea7443"
-    },
-    {
-      "time": 6,
       "day": 3,
-      "id": "d38cb372-c78d-46a8-9441-79fab443d22a"
+      "id": "50529786-2e48-49c7-a652-8c43c089966d"
     },
     {
       "time": 3,
-      "day": 4,
-      "id": "5a75452f-9b98-4e01-b8ba-38cdf9e8ff7a"
-    },
-    {
-      "time": 5,
-      "day": 1,
-      "id": "88fb340c-1081-4999-8af7-a936010d2a13"
-    },
-    {
-      "time": 2,
-      "day": 4,
-      "id": "b409995e-408f-416e-99ce-a75fb751400a"
+      "day": 3,
+      "id": "aab75b22-f7c4-41d1-9d2c-d6d40694baef"
     },
     {
       "time": 3,
-      "day": 4,
-      "id": "18283815-2814-49fa-a22f-0b1559d31738"
+      "day": 2,
+      "id": "87bbb230-0d1c-417c-abdd-235ec6964760"
     },
     {
-      "time": 8,
-      "day": 1,
-      "id": "c8380e5e-9366-46cc-8f64-4557add11acf"
+      "time": 3,
+      "day": 2,
+      "id": "750a456f-6063-42e6-b2dc-7b43fd497a01"
     },
     {
-      "time": 18,
-      "day": 6,
-      "id": "9827cec1-66bd-4874-a0b7-ccdff3081a2f"
-    },
-    {
-      "time": 11,
-      "day": 1,
-      "id": "e04ef914-dc73-4ff6-9c1d-7bff903e9fe7"
-    },
-    {
-      "time": 11,
+      "time": 0,
       "day": 0,
-      "id": "7ab7da24-b519-4328-a6ac-96228d6049e2"
+      "id": "6e1f3d53-9b66-4659-b434-5b4d6feed8f3"
+    },
+    {
+      "time": 0,
+      "day": 4,
+      "id": "c9ac5c17-a17c-4192-9f47-07b47c576450"
     },
     {
       "time": 3,
-      "day": 4,
-      "id": "5f929423-c4ac-4cba-b817-e6bcbb7a5d67"
-    },
-    {
-      "time": 3,
-      "day": 4,
-      "id": "a7c67db4-e809-4095-adf5-839bdb1cf3a3"
-    },
-    {
-      "time": 3,
-      "day": 4,
-      "id": "547b4516-813f-4ce5-835f-8550ba49d9ed"
-    },
-    {
-      "time": 23,
       "day": 0,
-      "id": "ea96d1a2-7ab9-40a8-b25c-d511d91cff04"
+      "id": "9245ce2b-c6db-4f4f-83b5-f82415608ce3"
+    },
+    {
+      "time": 3,
+      "day": 0,
+      "id": "3725d2a7-0446-47be-960c-d91a2649efdb"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "3d5db3a6-c15a-419c-9337-f4fb567c694c"
+    },
+    {
+      "time": 3,
+      "day": 4,
+      "id": "d37b1c56-fcbf-4aa7-81f8-641402cf44a1"
     }
   ]
 }

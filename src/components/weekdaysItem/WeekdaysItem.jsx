@@ -6,6 +6,7 @@ const WeekdaysItem = ({dayOfWeek, day, handleActiveElem, isActive}) => {
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+    flex-grow: 1;
   `;
   const DayOfWeek = styled.div`
     font-weight: 600;

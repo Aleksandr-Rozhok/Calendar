@@ -14,6 +14,7 @@ const CalendarFooter = (id) => {
     padding: 0 5%;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 1;
   `;
   const CurrentDate = styled.p`
     font-weight: 400;

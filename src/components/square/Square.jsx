@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {useGetEventsQuery, useCreateEventMutation} from "../../api/apiSlice";
-import {toggleVisibleBtn , getDeleteId} from "../../actions/index";
+import {toggleVisibleBtn , getDeleteId, toggleCellColor} from "../../actions/index";
+import { useEffect } from "react";
 
 const Row = ({numberOfRow}) => {
     const SquareContainer = styled.div`
@@ -28,14 +29,17 @@ const Row = ({numberOfRow}) => {
 
     const {data: events = []} = useGetEventsQuery();
     const [createEvent] = useCreateEventMutation();
-    //const {deleteId} = useSelector(state => state.deleteBtn);
+    const {color} = useSelector(state => state.deleteBtn);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        filterEvents(events);
+    }, [events])
 
     const deleteEvent = (item, id) => {
         console.log(id)
-        // dispatch(toggleCellColor(false));
-        // dispatch(toggleCellColor(true));
+        //dispatch(toggleCellColor(false));
+         dispatch(toggleCellColor(true));
 
         // if (color) {
         //     item.style.backgroundColor = "red";
@@ -75,9 +79,10 @@ const Row = ({numberOfRow}) => {
 
     const renderRow = (time) => {
         const result = [];
+        const currEvents = allEvents[time];
+        let currDayOfWeek = 0;
 
         if (allEvents[time]) {
-            const currEvents = allEvents[time];
             const currDay = {};
 
             currEvents.forEach(item => {
@@ -86,31 +91,36 @@ const Row = ({numberOfRow}) => {
                 }
             })
 
-            for (let i = 0; i < 7; i++) {
-                if (currDay[i]) {
+            for (let i = 1; i < 8; i++) {
+                i === 7 ? currDayOfWeek = 0 : currDayOfWeek = i;
+                if (currDay[currDayOfWeek] || currDay[currDayOfWeek] === 0) {
                     result.push(<Square
                          style={{backgroundColor: "rgba(183, 224, 245, 0.78)"}}
-                         onClick={(e) => deleteEvent(e.target, currDay[i])}
+                         onClick={(e) => deleteEvent(e.target, currDay[currDayOfWeek])}
+                         isActive={color}
                          time={time}
-                         id={currDay[i]}
-                         key={currDay[i]}
-                         day={i} />)
+                         id={currDay[currDayOfWeek]}
+                         key={currDay[currDayOfWeek]}
+                         day={currDayOfWeek} />)
                 } else {
                     result.push(<Square 
                         time={time}
-                        onClick={(e) => addEvent(time, i, e.target.id)}
-                        day={i} 
+                        isActive={color}
+                        onClick={(e) => addEvent(time, currDayOfWeek, e.target.id)}
+                        day={currDayOfWeek} 
                         id={uuidv4()}
                         key={uuidv4()}/>)
                 }
             }
         } else {
-            for (let i = 0; i < 7; i++) {
+            for (let i = 1; i < 8; i++) {
+                i === 7 ? currDayOfWeek = 0 : currDayOfWeek = i;
                 result.push(<Square 
                     id={uuidv4()}
+                    isActive={color}
                     time={time}
-                    onClick={(e) => addEvent(time, i, e.target.id)}
-                    day={i} 
+                    onClick={(e) => addEvent(time, currDayOfWeek, e.target.id)}
+                    day={currDayOfWeek} 
                     key={uuidv4()}/>)
             }
         }

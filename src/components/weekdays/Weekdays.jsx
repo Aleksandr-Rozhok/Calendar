@@ -14,6 +14,7 @@ const Weekdays = () => {
     justify-content: space-between;
     border-top: 1px solid #cdcdcd;
     border-bottom: 1px solid #cdcdcd;
+    flex-grow: 1;
   `;
 
   const ListOfDate = styled.ul`

@@ -9,6 +9,7 @@ const CalendarHeader = () => {
     justify-content: space-between;
     align-items: center;
     margin: 0 25px;
+    flex-grow: 1;
   `;
   const CalendarTitle = styled.h1`
     font-weight: 400;
@@ -28,11 +29,11 @@ const CalendarHeader = () => {
   const addEvent = () => {
     const newEvent = new Date(prompt("Enter event time: YYYY-MM-DD HH:mm:ss"));
     const eventTime = newEvent.getHours();
-    const eventDate = newEvent.getDay();
+    const eventDay = newEvent.getDay();
 
     createEvent({
       "time": eventTime,
-      "day": eventDate,
+      "day": eventDay,
       "id": uuidv4()
     });
   }

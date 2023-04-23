@@ -14,6 +14,10 @@ const App = () => {
     justify-content: center;
     flex-direction: column;
     margin: auto;
+
+    @media (min-width: 741px) {
+      justify-content: center;
+    }
   `
   
   return (

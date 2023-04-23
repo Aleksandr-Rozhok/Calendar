@@ -9,6 +9,7 @@ const Sheet = () => {
         display: flex;
         flex-direction: row;
         overflow-y: auto;
+        flex-grow: 1;
     `
     const TimeSection = styled.div`
         width: 10%;
@@ -18,9 +19,11 @@ const Sheet = () => {
         align-items: flex-end;
         flex-direction: column;
         padding-right: 15px;
+        flex-grow: 1;
     `
     const CellsSection = styled.div`
         width: 100%;
+        flex-grow: 1;
     `
 
     const createHoursPointer = () => {
