@@ -9,13 +9,14 @@ import Sheet from "../calendarSheet/CalendarSheet.jsx";
 const App = () => {
   const AppWrapper = styled.div`
     max-width: 740px;
+    min-width: 390px;
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: auto;
 
-    @media (min-width: 741px) {
+    @media (min-width: 740px) {
       justify-content: center;
     }
   `

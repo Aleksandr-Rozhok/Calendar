@@ -9,9 +9,9 @@ const HoursPointer = ({pointer}) => {
     justify-content: center;
     align-items: center;
     color: grey;
-    padding-top: calc(23px + (100vh - 740px) / 10);
+    padding-top: 45px;
+    flex-grow: 1;
   `
-
   return (
     <HourPointer>{pointer}</HourPointer>
   );
