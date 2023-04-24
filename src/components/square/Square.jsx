@@ -7,6 +7,11 @@ import {toggleVisibleBtn , getDeleteId, toggleCellColor} from "../../actions/ind
 import { useEffect } from "react";
 
 const Row = ({numberOfRow}) => {
+    const {data: events = []} = useGetEventsQuery();
+    const [createEvent] = useCreateEventMutation();
+    const {currDay, currTime} = useSelector(state => state.deleteBtn);
+    const dispatch = useDispatch();
+
     const SquareContainer = styled.div`
         display: flex;
         justify-content: flex-end;
@@ -27,30 +32,19 @@ const Row = ({numberOfRow}) => {
         cursor: pointer;
     `
 
-    const {data: events = []} = useGetEventsQuery();
-    const [createEvent] = useCreateEventMutation();
-    const {color} = useSelector(state => state.deleteBtn);
-    const dispatch = useDispatch();
-
     useEffect(() => {
         filterEvents(events);
     }, [events])
 
-    const deleteEvent = (item, id) => {
-        console.log(id)
-        //dispatch(toggleCellColor(false));
-         dispatch(toggleCellColor(true));
-
-        // if (color) {
-        //     item.style.backgroundColor = "red";
-        // }
+    const deleteEvent = (id, day, time) => {
+        dispatch(toggleCellColor({day, time}));
         dispatch(getDeleteId(id));
         dispatch(toggleVisibleBtn(false));
     }
 
     const addEvent = (time, day, id) => {
         dispatch(toggleVisibleBtn(true));
-        const confirm = window.confirm(`Want to add an event at ${time}?`)
+        const confirm = window.confirm(`Want to add an event at ${time}:00?`)
         
         if (confirm) {
             createEvent({
@@ -80,32 +74,31 @@ const Row = ({numberOfRow}) => {
     const renderRow = (time) => {
         const result = [];
         const currEvents = allEvents[time];
-        let currDayOfWeek = 0;
 
         if (allEvents[time]) {
-            const currDay = {};
+            const pointDay = {};
 
             currEvents.forEach(item => {
-                if (!currDay[item.day]) {
-                    currDay[item.day] = item.id;
+                if (!pointDay[item.day]) {
+                    pointDay[item.day] = item.id;
                 }
             })
 
             for (let i = 1; i < 8; i++) {
+                let currDayOfWeek = 0;
                 i === 7 ? currDayOfWeek = 0 : currDayOfWeek = i;
-                if (currDay[currDayOfWeek] || currDay[currDayOfWeek] === 0) {
+                if (pointDay[currDayOfWeek] || pointDay[currDayOfWeek] === 0) {
                     result.push(<Square
-                         style={{backgroundColor: "rgba(183, 224, 245, 0.78)"}}
-                         onClick={(e) => deleteEvent(e.target, currDay[currDayOfWeek])}
-                         isActive={color}
+                         style={{backgroundColor: `${currDay === currDayOfWeek && currTime === time ? "red" : "rgba(183, 224, 245, 0.78)"}`}}
+                         onClick={() => deleteEvent(pointDay[currDayOfWeek], currDayOfWeek, time)}
                          time={time}
-                         id={currDay[currDayOfWeek]}
-                         key={currDay[currDayOfWeek]}
-                         day={currDayOfWeek} />)
+                         id={pointDay[currDayOfWeek]}
+                         key={pointDay[currDayOfWeek]}
+                         day={currDayOfWeek}
+                          />)
                 } else {
                     result.push(<Square 
                         time={time}
-                        isActive={color}
                         onClick={(e) => addEvent(time, currDayOfWeek, e.target.id)}
                         day={currDayOfWeek} 
                         id={uuidv4()}
@@ -114,10 +107,10 @@ const Row = ({numberOfRow}) => {
             }
         } else {
             for (let i = 1; i < 8; i++) {
+                let currDayOfWeek = 0;
                 i === 7 ? currDayOfWeek = 0 : currDayOfWeek = i;
                 result.push(<Square 
                     id={uuidv4()}
-                    isActive={color}
                     time={time}
                     onClick={(e) => addEvent(time, currDayOfWeek, e.target.id)}
                     day={currDayOfWeek} 

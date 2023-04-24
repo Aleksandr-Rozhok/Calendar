@@ -44,13 +44,10 @@ const Weekdays = () => {
 
   const renderDateList = (currDayOfWeek) => {
     const arrOfDates = [];
+    const startOfWeek = date - (currDayOfWeek - 1);
 
-    if (currDayOfWeek !== 1) {
-      const startOfWeek = date - (currDayOfWeek - 1);
-
-      for (let i = startOfWeek; i < startOfWeek + 7; i++) {
-        arrOfDates.push(i);
-      }
+    for (let i = startOfWeek; i < startOfWeek + 7; i++) {
+      arrOfDates.push(i);
     }
 
     return arrOfDates.map((day, i) => {

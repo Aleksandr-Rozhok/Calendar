@@ -29,18 +29,18 @@ const CalendarFooter = (id) => {
     cursor: pointer;
   `;
 
-const [deleteEvents] = useDeleteEventMutation();
-const {visible, deleteId} = useSelector(state => state.deleteBtn);
-const dispatch = useDispatch();
+  const [deleteEvents] = useDeleteEventMutation();
+  const {visible, deleteId} = useSelector(state => state.deleteBtn);
+  const dispatch = useDispatch();
 
-const deleteEvent = (id) => {
-  const confirm = window.confirm("Do you really want to delete this event?")
+  const deleteEvent = (id) => {
+    const confirm = window.confirm("Do you really want to delete this event?")
 
-  if (confirm) {
-    deleteEvents(id);
-    dispatch(toggleVisibleBtn(true));
+    if (confirm) {
+      deleteEvents(id);
+      dispatch(toggleVisibleBtn(true));
+    }
   }
-}
 
   return (
     <Footer>

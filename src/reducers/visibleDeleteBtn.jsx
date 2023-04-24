@@ -1,6 +1,7 @@
 const initialState = {
     visible: true,
-    color: false,
+    currDay: null,
+    currTime: null,
     deleteId: ''
 }
 
@@ -14,7 +15,8 @@ const deleteBtn = (state = initialState, action) => {
         case 'TOGGLE_CELL_COLOR':
             return {
                 ...state,
-                color: action.payload
+                currDay: action.payload.day,
+                currTime: action.payload.time
             }
         case 'GET_DELETE_ID':
             return {
