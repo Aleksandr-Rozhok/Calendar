@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Aleksandr-Rozhok/Calendar/static/css/main.e6c13ad2.css",
+    "main.js": "/Aleksandr-Rozhok/Calendar/static/js/main.6d1c31dc.js",
+    "index.html": "/Aleksandr-Rozhok/Calendar/index.html",
+    "main.e6c13ad2.css.map": "/Aleksandr-Rozhok/Calendar/static/css/main.e6c13ad2.css.map",
+    "main.6d1c31dc.js.map": "/Aleksandr-Rozhok/Calendar/static/js/main.6d1c31dc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6d1c31dc.js"
+  ]
+}
