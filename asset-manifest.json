@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Aleksandr-Rozhok/Calendar/static/css/main.e6c13ad2.css",
-    "main.js": "/Aleksandr-Rozhok/Calendar/static/js/main.6d1c31dc.js",
-    "index.html": "/Aleksandr-Rozhok/Calendar/index.html",
-    "main.e6c13ad2.css.map": "/Aleksandr-Rozhok/Calendar/static/css/main.e6c13ad2.css.map",
-    "main.6d1c31dc.js.map": "/Aleksandr-Rozhok/Calendar/static/js/main.6d1c31dc.js.map"
+    "main.css": "/Calendar/static/css/main.e6c13ad2.css",
+    "main.js": "/Calendar/static/js/main.dba6d80f.js",
+    "index.html": "/Calendar/index.html",
+    "main.e6c13ad2.css.map": "/Calendar/static/css/main.e6c13ad2.css.map",
+    "main.dba6d80f.js.map": "/Calendar/static/js/main.dba6d80f.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6d1c31dc.js"
+    "static/js/main.dba6d80f.js"
   ]
 }
